@@ -1,0 +1,15 @@
+UNIX
+====
+	=> Linux
+	=> Solaris
+	=> HP-US
+	=> IBM-AIX
+	
+Linux
+=====
+	=> Rehat (Most of time used)
+	=> Fedora
+	=> cent os
+	=> ubuntu
+
+

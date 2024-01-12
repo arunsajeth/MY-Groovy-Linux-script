@@ -1,0 +1,150 @@
+Simple if
+=========
+
+echo -n "Enter the number:"
+read num
+if [ $num -gt 0 ]   // here gt is greater than 
+then
+        echo "$num is positive"
+fi
+echo "Bye"
+
+
+If else Example 
+===============
+
+2. With conditons
+------------------
+
+echo -n "Enter the number:"
+read num
+if [ $num -gt 0 ]
+then
+        echo "$num is positive"
+else
+        echo "$num is negative"
+fi
+echo "Bye"
+
+
+1.with commands
+---------------
+echo -n "Enter the username:"
+read name
+if grep "$name" /etc/passwd >/dev/null     Here /dev/null is like blackhole it catches unwanted message
+then
+        echo "$name is exist"
+else
+        echo "$name is not exit"
+fi
+echo "Bye"
+
+
+
+Nested If Example
+=================
+
+1.With commands
+----------------
+echo -n "Enter the username:"
+read name
+if grep -w "$name" /etc/passwd >/dev/null
+then
+        echo "$name is exist"
+        if who|grep "$name" >/dev/null
+        then
+                echo "$name is connected"
+        else
+                echo "$name is not connected"
+        fi
+else
+        echo "$name is not exit"
+fi
+echo "Bye"
+
+
+2. With conditons
+-------------------
+echo -n "Enter the number:"
+read num
+if [ $num -gt 0 ]
+then
+        echo "$num is +ve"
+        if [ $num -lt 10 ]
+        then
+                echo "$num is single digit"
+                if [ `expr $num % 2` -eq 0 ]
+                then
+                        echo "$num is even"
+                else
+                        echo "$num is odd"
+                fi
+        else
+                echo "$num is not a single digit"
+        fi
+else
+        echo "$num is -ve"
+fi
+
+
+File test commands example
+==========================
+
+echo -n "Enter the file name:"
+read fname
+if [ -e $fname ]
+then
+        echo "$fname file exist"
+        if [ -f $fname ]
+        then
+                echo "$fname is regular file"
+                if [ -r $fname ]
+                then
+                        echo "$fname has read permission"
+                        echo "###############################"
+                        cat $fname
+                        echo "###############################"
+                else
+                        echo "$fname has not read permission"
+                fi
+        else
+                echo "$fname is not regular file"
+        fi
+else
+        echo "$fname file not exist"
+fi
+
+
+Ladder If Example
+==================
+
+echo -n "Enter the number:"
+read num
+if [ $num -gt 0 ]
+then
+        echo "$num is positive"
+elif [ $num -eq 0 ]
+then
+        echo "$num is zero"
+elif [ $num -lt 0 ]
+then
+        echo "$num is negative"
+else
+        echo "$num is not number"
+fi
+echo "Bye"
+
+
+
+Switch Case Example
+===================
+
+echo -n "Enter the number:"
+read num
+case $num in
+1) echo "one" ;;
+2) echo "two" ;;
+*) echo "None of the above" ;;
+esac
+
+
